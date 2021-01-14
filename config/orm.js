@@ -34,7 +34,7 @@ function objectToSql (object){
 var orm = {
 //SelectAll
     all: function(table, callback){
-        var query = "SELECT * FROM" + table + ";";
+        var query = "SELECT * FROM " + table + ";";
         connection.query(query, function(err, result){
             if (err) { 
                 throw err;
