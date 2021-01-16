@@ -17,7 +17,7 @@ var burger = {
         });
     },
     // Upating Data - ObjectColVal = {burger_name:?, devoured = ?}
-    update: function(objColVal,condition, callback){
+    update: function(objColVal, condition, callback){
         orm.update("burgers", objColVal, condition, function(res){
             callback(res);
         });

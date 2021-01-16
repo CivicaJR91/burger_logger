@@ -1,6 +1,6 @@
 const connection = require("../config/connection.js");
 
-//Helper fucntion for SQL Syntax
+
 
 //converting data/values into a string
 function dataIntoString (values){
@@ -11,7 +11,7 @@ function dataIntoString (values){
     return arr.toString();
 }
 
-//Helper fucntion to convert objects key/values to SQL syntax
+//Converting objects key/values to SQL syntax
 
 function objectToSql (object){
     var arr =[];
@@ -32,7 +32,7 @@ function objectToSql (object){
 
 
 var orm = {
-//SelectAll
+//SelectAll - Display all the values in the table
     all: function(table, callback){
         var query = "SELECT * FROM " + table + ";";
         connection.query(query, function(err, result){
@@ -42,19 +42,19 @@ var orm = {
             callback(result);
         });
     },
-//Inseting Data
+//Inseting New Burgers
     create: function(table, columns, values, callback){
-        var query = "INSERT INTO" + table;
-        query += " (";
-        query += columns.toString();
-        query += " )";
-        query += "VALUES (";
-        query += dataIntoString(values.length);
-        query += ") ";
+        var queryInser = "INSERT INTO" + table;
+        queryInser += " (";
+        queryInser += columns.toString();
+        queryInser += ") ";
+        queryInser += "VALUES (";
+        queryInser += dataIntoString(values.length);
+        queryInser += ") ";
 
-        console.log (query);
+        console.log (queryInser);
 
-        connection.query(query, values, function(err, result){
+        connection.query(queryInser, values, function(err, result){
             if (err) {
                 throw err;
             }
@@ -64,15 +64,15 @@ var orm = {
 
 //Upating Data - ObjectColVal = {burger_name:?, devoured = ?}
     update: function(table,objColVal,condition, callback){
-        var query = "UPDATE " + table;
-        query += "SET ";
-        query += objectToSql(objColVal);
-        query += " WHERE ";
-        query += condition;
+        var queryUpdt = "UPDATE " + table;
+        queryUpdt += " SET  ";
+        queryUpdt += objectToSql(objColVal);
+        queryUpdt += " WHERE ";
+        queryUpdt += condition;
 
-        console.log(query);
+        console.log(queryUpdt);
 
-        connection.query(query, function(err, result){
+        connection.query(queryUpdt, function(err, result){
             if (err) 
             {
             throw err;

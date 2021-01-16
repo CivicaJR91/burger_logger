@@ -1,37 +1,48 @@
-<h1>Eat-Da-Burger</h1>
-
-<h2>Your Burgers</h2>
-<ul>
-{{#each burgers}}
-    {{> burgers/ burger-block devoured = true}}
-{{/unless}}
-{{/each}}
-</ul>
-
-<h2>Devoured Burgers</h2>
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/ burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add Your Burger</h2>
-
-<form class="create-form">
-    <div class = "form-group"></div>
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="bur" name="name">
+<div class="top">
+  <h1>Eat-Da-Burger</h1>
+  <br>
+  <img src="/public/asset/burger.jpg" class="img-fluid" alt="delivious burger">
 </div>
-<button type="submit">Add Burger</button>
-</form>
 
-<li>
-	{{name}}
-<button class="change-devoured" data-id="{{id}}" data-newsleep="{{devoured}}">
-		{{#if devoured}}Devoured{{else}}Devoured2{{/if}}
-	</button>
+<div class="row">
+  <div class="col-12">
+    <h2 id="YB">Add Your Burger</h2>
+    <form class="create-form">
+      <div class="form-group"></div>
+      <label for="burger">Burger Name:</label>
+      <input type="text" id="burger" name="burger">
+      <button type="submit">Add Burger</button>
+  </div>
+  </form>
+</div>
+</div>
 
-	<button class="devoured-burger" data-id="{{this.id}}">Devoured3</button>
-</li>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h2>Your Burgers</h2>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{burger_name}}
+      {{> burgers/burger-block}}
+      {{/unless}}
+      {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-6">
+      <h2>Devoured Burgers</h2>
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+          {{id}}
+          {{burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+<ul>
