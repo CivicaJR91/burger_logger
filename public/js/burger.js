@@ -21,7 +21,7 @@ $(function () {
 
         var newBurger = {
             burger: $("#burger").val().trim(),
-            // devoured: $("[burger_name]:checked").val().trim()
+            
         };
 
         //POST TO ENTER NEW BURGER AND REALOAD WITH UPDATED LIST

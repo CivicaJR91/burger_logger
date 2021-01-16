@@ -44,7 +44,7 @@ var orm = {
     },
 //Inseting New Burgers
     create: function(table, columns, values, callback){
-        var queryInser = "INSERT INTO" + table;
+        var queryInser = "INSERT INTO " + table;
         queryInser += " (";
         queryInser += columns.toString();
         queryInser += ") ";

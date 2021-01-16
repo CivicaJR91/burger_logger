@@ -1,20 +1,18 @@
-
-
 <div class="container">
-<div id="top">
-  <div class="row">
-    <div class="col-12">
-  <h1>Eat-Da-Burger!</h1>
+  <div class="row" id="top">
+    <div class="col align-self-center">
+    <h1>Eat-Da-Burger!</h1>
   <br>
   <img src="/asset/burger.jpg" class="img-fluid" alt="delivious burger" style="width: 300px; height:250px;">
-</div>
-</div>
-</div>
+    </div>
+    
+  </div>
 </div>
 
-<div class="row" id="row2">
-  <div class="col-12">
-    <h2 id="YB">Enter A New Burger</h2>
+<div class="container">
+  <div class="row" id="row2">
+    <div class="col align-self-center">
+     <h2 id="YB">Enter A New Burger</h2>
     <form class="create-form">
       <div class="form-group"></div>
       <label for="burger">Burger Name:</label>
@@ -22,7 +20,9 @@
       <button class="btn btn-secondary btn-sm" type="submit">Add Burger</button>
   </div>
   </form>
-</div>
+    </div>
+
+  </div>
 </div>
 
 <div class="container" id="tables">
@@ -31,9 +31,7 @@
       <h2>Your Burgers</h2>
       {{#each burgers}}
       {{#unless devoured}}
-      {{burger_name}}
-       {{!-- {{> burgers/burger-block}} --}}
-     
+       {{>burgers/burger-block devoured=false}}
       {{/unless}}
       {{/each}}
       </ul>
@@ -44,10 +42,7 @@
       <ul>
         {{#each burgers}}
         {{#if devoured}}
-        <li>
-          {{id}}
-          {{burger_name}}
-        </li>
+         {{>burgers/burger-block devoured=true}}
         {{/if}}
         {{/each}}
       </ul>
