@@ -10,13 +10,13 @@ const connection = mysql.createConnection({
 });
 
 //Making Connection
-connection.connect(function(err){
-    if (err){
-        console.error("Error" + err.stack);
-        return
-    }
-    console.log(connection.threadId);
-})
+// connection.connect(function(err){
+//     if (err){
+//         console.error("Error" + err.stack);
+//         return
+//     }
+//     console.log(connection.threadId);
+// })
 
 
 //Making connection to Heroku
@@ -26,9 +26,9 @@ if(process.env.JAWSDB_URL){
     herukuConnect= mysql.createConnection(process.env.JAWSDB_URL);
 } else{
     herukuConnect = mysql.createConnection({
-    host:"localhost",
-    user: "root",
-    password:"" , // add heruko pass
+    host:"j21q532mu148i8ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user: "xnq1e652cg4l7qcy",
+    password:"xzzjvw3oibroxnyn" , // add heruko pass
     database:"wedrc380ht2h0j6l" // add heruko database
     });
 };
