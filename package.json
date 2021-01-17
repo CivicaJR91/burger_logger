@@ -1,0 +1,20 @@
+{
+  "name": "burger_logger",
+  "version": "1.0.0",
+  "description": "create burger list and devoured",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CivicaJR91/burger_logger.git"
+  },
+  "author": "Janliz Suarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CivicaJR91/burger_logger/issues"
+  },
+  "homepage": "https://github.com/CivicaJR91/burger_logger#readme"
+}
