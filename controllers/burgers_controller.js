@@ -3,8 +3,6 @@ var router = express.Router();
 var burger = require ("../models/burger.js");
 
 //Create routes - connecting the routes to the models burger.js
-
-
 // Showing all data  - allData is hadlebar objects devored list
 router.get("/", function(req, res){
     burger.all(function(data){
@@ -25,7 +23,8 @@ router.post("/api/burgers", function(req, res){
     ],
     [
         req.body.burger,
-       false 
+        req.body.devoured
+    //    false 
     ], function(result){
         res.json({
             id:result.id  //sending back an ID of the new data
@@ -38,11 +37,11 @@ router.post("/api/burgers", function(req, res){
 router.put("/api/burgers/:id", function(req, res){
     var condition = "id = " + req.params.id;
 
+
     console.log(condition);
     burger.update({
         devoured: req.body.devoured
-    },
-    condition, function (result){
+    },condition, function (result){
         if (result.change == 0) {
             return res.status(404).end();
         }else {

@@ -10,6 +10,10 @@ margin-top: 50px;
 margin-left: 500px;
 
 }
+
+.img-fluid{
+    width: 40%;
+}
 h1 {
     margin-left: 100px;
     font-size: 20px;
@@ -21,7 +25,7 @@ form {
 }
 
 #row2{
-    margin-left: 400px;
+    margin-left: 300px;
 
 }
 #YB {
@@ -37,7 +41,14 @@ form {
     margin-left: 250px;
 }
 
+.titles{
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+
 #button{
-    height: 50px;
+    justify-content: space-between;
+    padding-top: 10px;
    
 }

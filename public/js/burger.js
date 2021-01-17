@@ -1,21 +1,22 @@
 $(function () {
+
+    //On click devoured button change to true 
     $(".change-devour").on("click", function (event) {
-        var id = $(this).data("id");
-        var newDevour = $(this).data("newdevour");
-
+        var id = $(this).data("id"); //partial handlebars data-id
         var DevourStatus = {
-            devoured: newDevour
+            devoured: true
         };
-
-        $.ajax("/api/burgers" + id, {
+     //call to make the updaye
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: DevourStatus
+           
         }).then(function () {
-            console.log("Change to", newDevour);
             location.reload();
         });
     });
 
+    //On input and click on submit button add new burger to the list
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 

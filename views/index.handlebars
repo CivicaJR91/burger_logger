@@ -1,14 +1,19 @@
+
+<!--Image and H1-->
+
 <div class="container">
   <div class="row" id="top">
     <div class="col align-self-center">
     <h1>Eat-Da-Burger!</h1>
   <br>
-  <img src="/asset/burger.jpg" class="img-fluid" alt="delivious burger" style="width: 300px; height:250px;">
+  <img src="/asset/burger.jpg" class="img-fluid" alt="delivious burger">
     </div>
     
   </div>
 </div>
 
+
+<!--Form, Form Title and Button-->
 <div class="container">
   <div class="row" id="row2">
     <div class="col align-self-center">
@@ -25,10 +30,11 @@
   </div>
 </div>
 
+<!--Table for devoured and not devour burgers-->
 <div class="container" id="tables">
   <div class="row justify-content-center">
-    <div class="col-6">
-      <h2>Your Burgers</h2>
+    <div class="col-6" id="column1">
+      <h2 class="titles">Your Burgers</h2>
       {{#each burgers}}
       {{#unless devoured}}
        {{>burgers/burger-block devoured=false}}
@@ -37,8 +43,8 @@
       </ul>
     </div>
 
-    <div class="col-6">
-      <h2>Devoured Burgers</h2>
+    <div class="col-6" id="column2">
+      <h2 class="titles">Devoured Burgers</h2>
       <ul>
         {{#each burgers}}
         {{#if devoured}}
