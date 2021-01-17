@@ -28,8 +28,8 @@ if(process.env.JAWSDB_URL){
     herukuConnect = mysql.createConnection({
     host:"localhost",
     user: "root",
-    password:"" ,//Add MySQL Password
-    database:"burgers_db"
+    password:"" , // add heruko pass
+    database:"wedrc380ht2h0j6l" // add heruko database
     });
 };
 
