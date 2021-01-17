@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/CivicaJR91/burger_logger/issues"
   },
-  "homepage": "https://github.com/CivicaJR91/burger_logger#readme"
+  "homepage": "https://github.com/CivicaJR91/burger_logger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  }
 }
