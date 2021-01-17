@@ -18,4 +18,4 @@ Run server.js file and start adding burgers!
 
 # Repositories:
 * Github: https://github.com/CivicaJR91/burger_logger
-* Heruku: https://git.heroku.com/thawing-taiga-56965.git
+* Heruku: https://thawing-taiga-56965.herokuapp.com/
